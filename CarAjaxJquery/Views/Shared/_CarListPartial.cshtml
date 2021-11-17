@@ -1,0 +1,27 @@
+﻿@model List<Car>
+
+<div class="container">
+    <h2>Basic Table of Cars</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Car ID</th>
+                <th>Brand</th>
+                <th>Milage</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var car in Model)
+            {
+            <tr>
+                <td>@car.CarId</td>
+                <td>@car.Brand</td>
+                <td>@car.Milage</td>
+                <td><a href="#" onclick="location.href =
+                    '@Url.Action("DeleteCar","Car", new { id=car.CarId })'">Delete</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

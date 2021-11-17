@@ -1,0 +1,42 @@
+﻿@model CarViewModel
+
+@{
+    ViewData["Title"] = "Car Page";
+}
+
+<div class="container">
+    <div>
+        <form asp-action="Index" method="post" role="form">
+            @Html.AntiForgeryToken()
+            <h4>Filter</h4>
+            <label asp-for="FilterString"></label>
+            <input asp-for="FilterString" required />
+            <input type="submit" class="btn btn-primary" name="btnFilter" value="search" />
+        </form>
+    </div>
+
+    <div>
+        <form asp-action="CreateCar" method="post" role="form">
+            @Html.AntiForgeryToken()
+            <div>
+                <h3><b>Create a new car</b></h3>
+                <label asp-for="Brand"></label>
+                <input asp-for="Brand" />
+                <span style="color:rebeccapurple" asp-validation-for="Brand"></span>
+
+                <label asp-for="Milage"></label>
+                <input asp-for="Milage" />
+                <span style="color:red" asp-validation-for="Milage"></span>
+
+            </div>
+            <div>
+                <input type="submit" class="btn btn-primary" name="btnCreateCar" value="Add Car" />
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <partial name="_CarListPartial" model="Model.CarListView" />
+    </div>
+
+</div>

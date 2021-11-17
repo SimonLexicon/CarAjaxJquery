@@ -1,0 +1,18 @@
+﻿<div>
+    <h2>@ViewBag.Title</h2>
+
+    <div>
+        <h2>JQuery with AJax functions</h2>
+        <div id="errorMessages"></div>
+
+        <input type="button" class="btn btn-primary" onclick="getAllCars()" value="get all cars" />
+
+        <label for="CarIdInputLable">Car ID</label>
+        <input id="CarIdInput" type="number" />
+
+        <input type="button" class="btn btn-primary" onclick="getCarByID()" value="DetailsForCar" />
+        <input type="button" class="btn btn-primary" onclick="deleteCarByID()" value="Delete" />
+    </div>
+
+    <div id="CarList"></div>
+</div>
