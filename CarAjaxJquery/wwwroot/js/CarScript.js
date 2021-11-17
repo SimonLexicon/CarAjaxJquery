@@ -24,19 +24,4 @@ function deleteCarByID() {
             document.getElementById('errorMessages').innerHTML = "Could not delete car.";
         });
 
-    $.ajax({
-        type: "POST",
-        url: '@Url.Action("createStudent")',
-        data: '{std: ' + JSON.stringify(std) + '}',
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        success: function () {
-            // alert("Data has been added successfully.");  
-            LoadData();
-        },
-        error: function () {
-            alert("Error while inserting data");
-        }
-    });
-
 }
